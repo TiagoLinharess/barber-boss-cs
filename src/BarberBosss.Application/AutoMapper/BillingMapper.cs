@@ -21,5 +21,6 @@ internal class BillingMapper : Profile
     private void EntityToResponse()
     {
         CreateMap<Billing, ResponseBillingShortJson>();
+        CreateMap<Billing, ResponseBillingJson>();
     }
 }

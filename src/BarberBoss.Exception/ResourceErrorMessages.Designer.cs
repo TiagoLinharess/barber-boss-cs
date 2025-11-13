@@ -88,6 +88,15 @@ namespace BarberBoss.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Billing not foud..
+        /// </summary>
+        public static string BILLING_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("BILLING_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The client&apos;s name must be between 2 and 120 characters long..
         /// </summary>
         public static string CLIENT_NAME_LENGTH_INVALID {

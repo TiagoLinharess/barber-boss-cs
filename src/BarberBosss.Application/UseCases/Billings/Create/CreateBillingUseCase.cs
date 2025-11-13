@@ -29,10 +29,7 @@ internal class CreateBillingUseCase : ICreateBillingUseCase
         var validator = new BillingValidator();
         validator.Start(request);
 
-        if (request.Status.Equals(PaymentStatus.Canceled))
-        {
-            request.Amount = 0;
-        }
+        if (request.Status.Equals(PaymentStatus.Canceled)) request.Amount = 0;
 
         var entity = _mapper.Map<Billing>(request);
 

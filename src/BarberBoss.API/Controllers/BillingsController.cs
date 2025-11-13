@@ -1,4 +1,6 @@
 ﻿using BarberBoss.Application.UseCases.Billings.Create;
+using BarberBoss.Application.UseCases.Billings.ReadAt;
+using BarberBoss.Application.UseCases.Billings.Update;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -18,5 +20,31 @@ public class BillingsController : ControllerBase
     {
         var response = await useCase.Execute(request);
         return Created(string.Empty, response);
+    }
+
+    [HttpGet]
+    [Route("{id:long}")]
+    [ProducesResponseType(typeof(ResponseBillingShortJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> ReadAt(
+        [FromServices] IReadAtBillingUseCase useCase,
+        [FromRoute] long id
+        )
+    {
+        var response = await useCase.Execute(id);
+        return Ok(response);
+    }
+
+    [HttpPut]
+    [Route("{id:long}")]
+    [ProducesResponseType(typeof(ResponseBillingShortJson), StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Update(
+        [FromServices] IUpdateBillingUseCase useCase,
+        [FromRoute] long id,
+        [FromBody] RequestBillingJson request)
+    {
+        await useCase.Execute(id, request);
+        return NoContent();
     }
 }
