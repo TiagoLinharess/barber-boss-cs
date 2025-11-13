@@ -1,4 +1,5 @@
 ﻿using BarberBoss.Application.UseCases.Billings.Create;
+using BarberBoss.Application.UseCases.Billings.Delete;
 using BarberBoss.Application.UseCases.Billings.ReadAt;
 using BarberBoss.Application.UseCases.Billings.Update;
 using BarberBoss.Communication.Requests;
@@ -45,6 +46,18 @@ public class BillingsController : ControllerBase
         [FromBody] RequestBillingJson request)
     {
         await useCase.Execute(id, request);
+        return NoContent();
+    }
+
+    [HttpDelete]
+    [Route("{id:long}")]
+    [ProducesResponseType(typeof(ResponseBillingShortJson), StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Delete(
+        [FromServices] IDeleteBillingUseCase useCase,
+        [FromRoute] long id)
+    {
+        await useCase.Execute(id);
         return NoContent();
     }
 }

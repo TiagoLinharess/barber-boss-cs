@@ -1,5 +1,6 @@
 ﻿using BarberBoss.Application.AutoMapper;
 using BarberBoss.Application.UseCases.Billings.Create;
+using BarberBoss.Application.UseCases.Billings.Delete;
 using BarberBoss.Application.UseCases.Billings.ReadAt;
 using BarberBoss.Application.UseCases.Billings.Update;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,5 +25,6 @@ public static class DependencyInjectionExtension
         services.AddScoped<ICreateBillingUseCase, CreateBillingUseCase>();
         services.AddScoped<IReadAtBillingUseCase, ReadAtBillingUseCase>();
         services.AddScoped<IUpdateBillingUseCase, UpdateBillingUseCase>();
+        services.AddScoped<IDeleteBillingUseCase, DeleteBillingUseCase>();
     }
 }
