@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="src/BarberBoss.API/BarberBoss.API.csproj" />
+  <Project Path="src/BarberBoss.Communication/BarberBoss.Communication.csproj" />
+  <Project Path="src/BarberBoss.Domain/BarberBoss.Domain.csproj" />
+  <Project Path="src/BarberBoss.Exception/BarberBoss.Exception.csproj" />
+  <Project Path="src/BarberBoss.Infrastructure/BarberBoss.Infrastructure.csproj" />
+  <Project Path="src/BarberBosss.Application/BarberBoss.Application.csproj" />
+</Solution>

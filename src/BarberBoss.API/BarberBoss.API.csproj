@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BarberBoss.Communication\BarberBoss.Communication.csproj" />
+    <ProjectReference Include="..\BarberBoss.Exception\BarberBoss.Exception.csproj" />
+    <ProjectReference Include="..\BarberBoss.Infrastructure\BarberBoss.Infrastructure.csproj" />
+    <ProjectReference Include="..\BarberBosss.Application\BarberBoss.Application.csproj" />
+  </ItemGroup>
+
+</Project>
