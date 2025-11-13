@@ -3,7 +3,7 @@ using BarberBoss.Exception;
 using BarberBoss.Exception.ExceptionsBase;
 using FluentValidation;
 
-namespace BarberBoss.Application.UseCases.Billing;
+namespace BarberBoss.Application.UseCases.Billings;
 
 internal class BillingValidator : AbstractValidator<RequestBillingJson>
 {

@@ -1,6 +1,7 @@
 using BarberBoss.API.Filters;
 using BarberBoss.API.Middlewares;
 using BarberBoss.Application;
+using BarberBoss.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddRouting(option => option.LowercaseUrls = true);
 
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
 
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 
 var app = builder.Build();

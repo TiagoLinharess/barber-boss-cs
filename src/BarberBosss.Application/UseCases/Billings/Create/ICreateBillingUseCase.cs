@@ -1,7 +1,7 @@
 ﻿using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
 
-namespace BarberBoss.Application.UseCases.Billing.Create;
+namespace BarberBoss.Application.UseCases.Billings.Create;
 
 public interface ICreateBillingUseCase
 {

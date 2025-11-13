@@ -1,4 +1,4 @@
-﻿using BarberBoss.Application.UseCases.Billing.Create;
+﻿using BarberBoss.Application.UseCases.Billings.Create;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +7,7 @@ namespace BarberBoss.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class BillingController : ControllerBase
+public class BillingsController : ControllerBase
 {
     [HttpPost]
     [ProducesResponseType(typeof(ResponseBillingShortJson), StatusCodes.Status201Created)]
