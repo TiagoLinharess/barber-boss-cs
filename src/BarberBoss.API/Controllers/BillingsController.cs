@@ -1,5 +1,6 @@
 ﻿using BarberBoss.Application.UseCases.Billings.Create;
 using BarberBoss.Application.UseCases.Billings.Delete;
+using BarberBoss.Application.UseCases.Billings.Read;
 using BarberBoss.Application.UseCases.Billings.ReadAt;
 using BarberBoss.Application.UseCases.Billings.Update;
 using BarberBoss.Communication.Requests;
@@ -21,6 +22,18 @@ public class BillingsController : ControllerBase
     {
         var response = await useCase.Execute(request);
         return Created(string.Empty, response);
+    }
+
+    [HttpGet]
+    [ProducesResponseType(typeof(ResponseBillingShortJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> Read([FromServices] IReadBillingUseCase useCase)
+    {
+        var response = await useCase.Execute();
+
+        if (response.Count == 0) return NoContent();
+
+        return Ok(response);
     }
 
     [HttpGet]
